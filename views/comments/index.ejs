@@ -15,8 +15,8 @@
 
         <p><b><%= comment.username%></b>: <%= comment.comment%></p>
 
-        <form style="display: inline-block" action="comments/show/<%=comment.id%>/" method="GET">
-          <button disabled>View Comment</button>
+        <form style="display: inline-block" action="comments/<%=comment.id%>/" method="GET">
+          <button>View Comment</button>
         </form>
 
         <form style="display: inline-block" action="comments/edit/<%=comment.id %>/" method="GET">
@@ -29,7 +29,6 @@
       <form action="comments/new/" method="GET">
         <button style="margin-top: 50px" disabled>Add Comment</button>
       </form>
-      
     </div>
   </body>
 </html>
