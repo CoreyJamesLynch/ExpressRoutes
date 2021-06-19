@@ -35,9 +35,18 @@ let data = [
   },
 ];
 
+app.post('/comments', (req, res) => {
+  console.log(req.body);
+});
+
 app.get('/comments', (req, res) => {
   res.render('comments/index', { data });
 });
+
+app.get('/comments/new', (req, res) => {
+  res.render('comments/new');
+});
+
 
 app.get('/comments/:id', (req, res) => {
   const comment_id = req.params.id;
