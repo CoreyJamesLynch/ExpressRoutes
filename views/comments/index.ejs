@@ -8,10 +8,15 @@
   </head>
   <body>
     <div>
-      <h1>Here are all the comments</h1>
-      <% for(comment of data) { %>
-      <p><b><%= comment.username%></b>: <%= comment.comment%></p>
-      <% } %>
+      <div>
+        <h1>Here are all the comments</h1>
+        <% for(comment of data) { %>
+        <p><b><%= comment.username%></b>: <%= comment.comment%></p>
+        <% } %>
+      </div>
+      <form action="comments/new" method="GET">
+        <button disabled>Add Comment</button>
+      </form>
     </div>
   </body>
 </html>
