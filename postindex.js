@@ -54,11 +54,17 @@ app.get('/comments/new', (req, res) => {
 });
 
 app.get('/comments/edit/:id', (req, res) => {
-  res.render('comments/edit');
+  const comment_id = req.params.id;
+  const comment = data.find((comment) => comment.id === comment_id);
+  res.render('comments/edit', { comment });
 });
 
 app.patch('/comments/:id', (req, res) => {
-  console.log(req.params, res.body);
+  const id = req.params.id;
+  const edited_comment = req.body.edit_comments_comment;
+  let old_comment = data.find((comment) => comment.id === id);
+  old_comment.comment = edited_comment;
+  res.redirect('/comments');
 });
 
 app.get('/comments/:id', (req, res) => {
