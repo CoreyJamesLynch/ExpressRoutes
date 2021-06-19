@@ -4,6 +4,9 @@ const port = 3000;
 const { v4: uuid } = require('uuid');
 const path = require('path');
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -32,6 +35,12 @@ let data = [
 
 app.get('/comments', (req, res) => {
   res.render('comments/index', { data });
+});
+
+app.get('/comments/:id', (req, res) => {
+  const comment_id = req.params.id;
+  const comment = data.find((comment) => comment.id === comment_id);
+  res.render('comments/show', { comment });
 });
 
 app.get('/', (req, res) => {
