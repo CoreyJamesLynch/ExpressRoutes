@@ -36,7 +36,13 @@ let data = [
 ];
 
 app.post('/comments', (req, res) => {
-  console.log(req.body);
+  const { new_comments_username, new_comments_comment } = req.body;
+  data.push({
+    id: uuid(),
+    username: new_comments_username,
+    comment: new_comments_comment,
+  });
+  res.redirect('/comments');
 });
 
 app.get('/comments', (req, res) => {
@@ -46,7 +52,6 @@ app.get('/comments', (req, res) => {
 app.get('/comments/new', (req, res) => {
   res.render('comments/new');
 });
-
 
 app.get('/comments/:id', (req, res) => {
   const comment_id = req.params.id;
