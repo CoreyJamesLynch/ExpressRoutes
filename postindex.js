@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const { v4: uuid } = require('uuid');
+const path = require('path');
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 let data = [
   {
@@ -29,7 +31,6 @@ let data = [
 ];
 
 app.get('/', (req, res) => {
-  console.log(data);
   res.render('comments/home');
 });
 
