@@ -67,6 +67,12 @@ app.patch('/comments/:id', (req, res) => {
   res.redirect('/comments');
 });
 
+app.delete('/comments/:id', (req, res) => {
+  const id = req.params.id;
+  data = data.filter((comment) => comment.id !== id);
+  res.redirect('/comments');
+});
+
 app.get('/comments/:id', (req, res) => {
   const comment_id = req.params.id;
   const comment = data.find((comment) => comment.id === comment_id);

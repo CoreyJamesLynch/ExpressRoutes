@@ -14,10 +14,10 @@
 
       <form
         style="display: inline-block"
-        action="/comments?_method=DELETE"
+        action="/comments/<%=comment.id%>?_method=DELETE"
         method="POST"
       >
-        <button disabled>Remove Comment</button>
+        <button>Remove Comment</button>
       </form>
 
       <form style="display: inline-block" action="/comments" method="get">
