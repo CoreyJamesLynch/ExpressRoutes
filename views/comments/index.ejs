@@ -7,6 +7,11 @@
     <title>Comments</title>
   </head>
   <body>
-    <h1>Here are all the comments</h1>
+    <div>
+      <h1>Here are all the comments</h1>
+      <% for(comment of data) { %>
+      <p><b><%= comment.username%></b>: <%= comment.comment%></p>
+      <% } %>
+    </div>
   </body>
 </html>
