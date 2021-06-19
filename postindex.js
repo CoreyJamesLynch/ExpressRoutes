@@ -30,6 +30,10 @@ let data = [
   },
 ];
 
+app.get('/comments', (req, res) => {
+  res.render('comments/index', { data });
+});
+
 app.get('/', (req, res) => {
   res.render('comments/home');
 });
