@@ -7,5 +7,21 @@
   </head>
   <body>
     <h1>Edit Comment</h1>
+    <p><b>Original text</b>: <%=comment.comment%></p>
+    <form action="/comments/<%=comment.id%>?_method=PATCH" method="POST">
+      <textarea
+        name="edit_comments_comment"
+        id="edit_comments_comment"
+        cols="30"
+        rows="5"
+      >
+<%=comment.comment%>
+    </textarea
+      >
+      <button>Submit</button>
+    </form>
+    <form action="/comments" method="GET">
+      <button>Return</button>
+    </form>
   </body>
 </html>
