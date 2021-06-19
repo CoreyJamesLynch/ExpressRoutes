@@ -15,11 +15,19 @@
 
         <p><b><%= comment.username%></b>: <%= comment.comment%></p>
 
-        <form style="display: inline-block" action="comments/<%=comment.id%>/" method="GET">
+        <form
+          style="display: inline-block"
+          action="comments/<%=comment.id%>/"
+          method="GET"
+        >
           <button>View Comment</button>
         </form>
 
-        <form style="display: inline-block" action="comments/edit/<%=comment.id%>/" method="GET">
+        <form
+          style="display: inline-block"
+          action="comments/edit/<%=comment.id%>/"
+          method="GET"
+        >
           <button>Edit Comment</button>
         </form>
 

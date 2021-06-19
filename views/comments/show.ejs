@@ -11,15 +11,18 @@
         <h1>Here's the Comment You Selected</h1>
         <p><b><%=comment.username%></b>: <%=comment.comment%></p>
       </div>
-      
-      <form style="display: inline-block" action="/comments?_method=DELETE" method="POST">
+
+      <form
+        style="display: inline-block"
+        action="/comments?_method=DELETE"
+        method="POST"
+      >
         <button disabled>Remove Comment</button>
       </form>
 
       <form style="display: inline-block" action="/comments" method="get">
         <button>Return</button>
       </form>
-
     </div>
   </body>
 </html>
