@@ -1,10 +1,35 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const { v4: uuid } = require('uuid');
 
 app.set('view engine', 'ejs');
 
+let data = [
+  {
+    id: uuid(),
+    username: 'Todd',
+    comment: 'lol that is so funny!',
+  },
+  {
+    id: uuid(),
+    username: 'Skyler',
+    comment: 'I like to go birdwatching with my dog',
+  },
+  {
+    id: uuid(),
+    username: 'Sk8erBoi',
+    comment: 'Plz delete your account, Todd',
+  },
+  {
+    id: uuid(),
+    username: 'onlysaywoof',
+    comment: 'woof woof woof',
+  },
+];
+
 app.get('/', (req, res) => {
+  console.log(data);
   res.render('comments/home');
 });
 
