@@ -53,6 +53,14 @@ app.get('/comments/new', (req, res) => {
   res.render('comments/new');
 });
 
+app.get('/comments/edit/:id', (req, res) => {
+  res.render('comments/edit');
+});
+
+app.patch('/comments/:id', (req, res) => {
+  console.log(req.params, res.body);
+});
+
 app.get('/comments/:id', (req, res) => {
   const comment_id = req.params.id;
   const comment = data.find((comment) => comment.id === comment_id);
