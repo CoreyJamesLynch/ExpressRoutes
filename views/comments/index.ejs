@@ -10,13 +10,26 @@
     <div>
       <div>
         <h1>Here are all the comments</h1>
+
         <% for(comment of data) { %>
+
         <p><b><%= comment.username%></b>: <%= comment.comment%></p>
+
+        <form style="display: inline-block" action="comments/show/<%=comment.id%>/" method="GET">
+          <button disabled>View Comment</button>
+        </form>
+
+        <form style="display: inline-block" action="comments/edit/<%=comment.id %>/" method="GET">
+          <button disabled>Edit Comment</button>
+        </form>
+
         <% } %>
       </div>
-      <form action="comments/new" method="GET">
-        <button disabled>Add Comment</button>
+
+      <form action="comments/new/" method="GET">
+        <button style="margin-top: 50px" disabled>Add Comment</button>
       </form>
+      
     </div>
   </body>
 </html>
